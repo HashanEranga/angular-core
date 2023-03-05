@@ -1,0 +1,19 @@
+<ng-container *ngIf="course">
+  <div id="container" *ngIf="course">
+    <div class="card" [ngClass]="applyCardClass()">
+      <img [src]="course.iconUrl" [alt]="course.description"
+      *ngIf="isImageVisible(); else noImage">
+      <div class="class__details">
+        <span class="tag" [ngClass]="applyTagClass()">{{course.category}}</span>
+      </div>
+      <div class="name">{{course.description}}</div>
+      <p>{{course.longDescription}}</p>
+      <button (click)="onCourseCardClicked(course)">Read More</button>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #noImage>
+  <p>No image is available</p>
+</ng-template>
+

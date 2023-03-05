@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {COURSES} from "../assets/db-data";
+import {Course} from "./Models/Course";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'IntroApp';
+
+  COURSES = COURSES;
+
+  onCourseCardClicked(course: Course) {
+    console.log("App Component course card clicked!")
+    console.log(course)
+  }
 }
